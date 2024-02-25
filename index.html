@@ -11,8 +11,24 @@
 </head>
 <body>
     <div class="container">
-        <div class="messages">
-            <p id="message"></p>
+        <div class="hamburger-menu">
+            <input id="menu__toggle" type="checkbox" />
+            <label class="menu__btn" for="menu__toggle">
+                <span></span>
+            </label>
+            <ul class="menu__box">
+                <li>
+                    <p class="hamburger-text">
+                        <a href="https://spoonacular.com/food-api/docs">
+                            Spoonacular
+                        </a> API key:
+                    </p>
+                    <input id="apikey" class="effect-16 apikey" type="text">
+                    <button onclick="setApiKey()" class="hamburger-confirm">
+                        <span class="hamburger-confirm-text">Подтвердить</span>
+                    </button>
+                </li>
+            </ul>
         </div>
         <div class="card">
             <h1 class="title">Поиск рецептов</h1>

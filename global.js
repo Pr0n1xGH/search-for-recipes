@@ -4,6 +4,11 @@ const inputElement = document.querySelector('.ingredients');
 
 inputElement.addEventListener('input', addCommas);
 
+if (localStorage.getItem("apikey") == '') {
+    console.log(localStorage.getItem("apikey")) 
+}
+
+
 function addCommas(event) {
     const inputValue = event.target.value;
     if (inputValue.indexOf(' ') > -1) {
@@ -23,11 +28,23 @@ function formatWithCommas(str) {
     }
 }
 
+function setApiKey() {
+    let apikey = document.getElementById("apikey")
+    localStorage.setItem("apikey", apikey.value);
+    alert("Изменения сохранены! Новый ключ: " + apikey.value)
+}
+
 async function getReceptions() {
+    let apiKeySpoonacular = localStorage.getItem("apikey");
+
+    if (localStorage.getItem("apikey") == null || localStorage.getItem("apikey") == '') {
+        apiKeySpoonacular = "47db37349a534b34833999f0ae0edf2f";
+    }
+
     fetch((
         "https://api.spoonacular.com/recipes/findByIngredients?" +
         new URLSearchParams({
-            apiKey: "47db37349a534b34833999f0ae0edf2f",
+            apiKey: apiKeySpoonacular,
             ingredients: inputElement.value
         }).toString()
     ), {
@@ -44,7 +61,7 @@ async function getReceptions() {
             fetch((
                 `https://api.spoonacular.com/recipes/${data[item].id}/information?` +
                 new URLSearchParams({
-                    apiKey: "47db37349a534b34833999f0ae0edf2f"
+                    apiKey: apiKeySpoonacular
                 })
             ), {
                 method: "GET",
@@ -71,9 +88,7 @@ async function getReceptions() {
                 receptsDiv.appendChild(recept);
             })
             .catch((error) => {
-                let message = document.getElementById('message');
-
-                return message.innerText = "Произошла ошибка: " + error.toString();;
+                return alert("Произошла ошибка: " + error.toString());
             })
         }
     });
