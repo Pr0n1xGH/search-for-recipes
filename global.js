@@ -1,13 +1,5 @@
-//import translate from "translate";
-
 const inputElement = document.querySelector('.ingredients');
-
 inputElement.addEventListener('input', addCommas);
-
-if (localStorage.getItem("apikey") == '') {
-    console.log(localStorage.getItem("apikey")) 
-}
-
 
 function addCommas(event) {
     const inputValue = event.target.value;
