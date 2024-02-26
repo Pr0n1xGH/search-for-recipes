@@ -1,8 +1,8 @@
 * {
-	box-sizing: border-box;
-	margin: 0;
-	padding: 0;
-	font-family: "Nunito", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Nunito", sans-serif;
 }
 
 body {
@@ -345,6 +345,10 @@ a {
   background-color: #CFD8DC;
 }
 
+.hamburger-menu {
+  z-index: 99;
+}
+
 .apikey,
 .hamburger-text {
   margin-left: 25px;
@@ -368,7 +372,6 @@ a {
   padding-right: 5px;
   padding-left: 5px;
   transition: 0.6s;
-  cursor: pointer;
 }
 
 .hamburger-confirm:hover {
