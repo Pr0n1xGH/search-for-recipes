@@ -391,6 +391,7 @@ a {
   .card {width: 355px;}
   .effect-16 ~ label {font-size: 16px;}
   .col-3 {width: 60%;}
+  .apikey {margin-right: 14px;}
   img {max-width: 100%;}
 }
 
