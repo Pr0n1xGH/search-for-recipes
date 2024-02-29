@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Поиск рецептов по ингридиентам</title>
-    <link rel="icon" href="src/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="templates/css/style.css"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
@@ -18,17 +19,53 @@
                 <span></span>
             </label>
             <ul class="menu__box">
-                <li>
-                    <p class="hamburger-text">
-                        <a href="https://spoonacular.com/food-api/docs">
-                            Spoonacular
-                        </a> API key:
-                    </p>
-                    <input id="apikey" class="effect-16 apikey" type="text">
-                    <button onclick="setApiKey()" class="hamburger-confirm">
-                        <span class="hamburger-confirm-text">Подтвердить</span>
-                    </button>
-                </li>
+                <div class="menu__background">
+                    <div class="menu__settings">
+                        <p class="settings__text">Settings</p>
+                        <img class="settings__logo" src="src/icons/settings.svg">
+                    </div>
+                    <div class="menu__input">
+                        <div class="input__recipes-menu">
+                            <p class="input__recipes">Number of recipes</p>
+                            <select class="recipes__input">
+                                <option value="5" class="recipes__option">5</option>
+                                <option value="10" class="recipes__option">10</option>
+                                <option value="15" class="recipes__option">15</option>
+                                <option value="20" class="recipes__option">20</option>
+                                <option value="25" class="recipes__option">25</option>
+                            </select>
+                            <button class="recipes__btn">
+                                <img class="recipes__logo" src="src/icons/app.svg">
+                            </button>
+                        </div>
+                        <div class="input__api-menu">
+                            <p class="input__api">Spoonacular API key</p>
+                            <form>
+                                <input class="api__input" id="apikey">
+                                <button onclick="setApiKey()" class="api__btn">
+                                    <img class="api__logo" src="src/icons/edit.svg">
+                                </button>
+                            </form>
+                        </div>
+                        <div class="menu__links">
+                            <a class="links__book-text" href="https://spoonacular.com/food-api/docs">
+                                <img class="links__book-logo" src="src/icons/book.svg">
+                                Spoonacular docs
+                            </a>
+                            <div class="links__separation"></div>
+                            <a class="links__opensourse-text" href="https://github.com/Pr0n1xGH/search-for-recipes">
+                                <img class="links__opensourse-logo" src="src/icons/disk.svg">
+                                Open Sourse
+                            </a>
+                            <div class="links__separation"></div>
+                            <a class="links__gstar-text" href="https://github.com/Pr0n1xGH/search-for-recipes/stargazers">
+                                <img class="links__gstar-logo" src="src/icons/cursor.svg">
+                                Give me a star
+                            </a>
+                            <div class="links__separation"></div>
+                        </div>
+                    </div>
+                </div>
             </ul>
         </div>
         <div class="card">

@@ -1,8 +1,8 @@
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: "Nunito", sans-serif;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-family: "Nunito", sans-serif;
 }
 
 body {
@@ -325,10 +325,8 @@ a {
   width: 300px;
   height: 100%;
   margin: 0;
-  padding: 80px 0;
   list-style: none;
-  background-color: #ECEFF1;
-  box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
+  background-color: #eceff100;
   transition-duration: .25s;
 }
 .menu__item {
@@ -351,6 +349,7 @@ a {
 
 .apikey,
 .hamburger-text {
+  font-family: 'Merriweather';
   margin-left: 25px;
 }
 
@@ -361,9 +360,9 @@ a {
 
 .hamburger-confirm {
   top: 50%;
-  background-color: #181818;
+  background-color: #2c3e50;
   color: #fff;
-  border: #181818;
+  border: #2c3e50;
   margin-left: 25px;
   margin-top: 10px;
   border-radius: 5px;
@@ -372,11 +371,207 @@ a {
   padding-right: 5px;
   padding-left: 5px;
   transition: 0.6s;
+  cursor: pointer;
 }
 
 .hamburger-confirm:hover {
-  background-color: #6d6d6d;
+  background-color: #22303d;
   transition: 0.6s;
+}
+
+select {
+  appearance: none;
+  box-shadow: none;
+  padding: 0 1em;
+  background-image: none;
+  cursor: pointer;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+.select {
+  margin-left: 23px;
+  margin-top: 10px;
+  margin-bottom: 35px;
+  position: relative;
+  display: flex;
+  width: 15em;
+  height: 3em;
+  border-radius: 0.25em;
+  overflow: hidden;
+}
+
+.select::after {
+  content: '\25BC';
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1em;
+  background-color: #34495e;
+  transition: .25s all ease;
+  pointer-events: none;
+}
+
+.select:hover::after {
+  color: #f39c12;
+}
+
+.settings-text {
+  font-size: 22px;
+  font-family: 'Josefin Sans';
+  margin-left: 24px;
+  margin-bottom: 35px;
+}
+
+.menu__background {
+  margin-top: 25px;
+  margin: 2px auto 2px;
+  background-color: #333;
+  border-radius: 16px;
+  height: 80%;
+  width: 95%;
+  padding: 10px;
+}
+
+.menu__settings {
+  display: flex;
+  margin-top: -10px;
+  margin-left: -10px;
+  margin-right: -10px;
+  background-color: #212121;
+  border-radius: 16px;
+  height: 40px;
+  align-items: center;
+  
+}
+
+.settings__text {
+  color: #fff;
+  font-family: 'JetBrains Mono';
+  font-size: 30px;
+  margin-left: 70px;
+}
+
+.settings__logo {
+  margin-left: 35px;
+}
+
+.input__recipes {
+  color: #fff;
+  font-family: 'JetBrains Mono';
+  font-size: 18px;
+  margin-left: 5px;
+  margin-top: 30px;
+}
+
+.api__input,
+.recipes__input {
+  box-sizing: border-box;
+  margin-left: 5px;
+  margin-top: 2px;
+  width: 220px;
+  height: 30px;
+  border-radius: 5px;
+  background-color: #d9d9d911;
+  border: 0;
+  color: #fff;
+  font-family: 'JetBrains Mono';
+}
+
+.recipes__input .recipes__option {
+  background: #333;
+  font-family: 'JetBrains Mono';
+}
+
+.recipes__btn {
+  position: relative;
+  background-color: #21212172;
+  border: 0;
+  border-radius: 5px;
+  right: 13.3%;
+  top: 7px;
+}
+
+.recipes__logo {
+  width: 75%;
+  margin-top: 4.1px;
+  margin-bottom: 0;
+  margin-right: 3px;
+  margin-left: 4px;
+  border-radius: 0px;
+}
+
+.input__api {
+  color: #fff;
+  font-family: 'JetBrains Mono';
+  font-size: 18px;
+  margin-left: 5px;
+}
+
+.input__api-menu {
+  margin-top: 6px;
+}
+
+.api__btn {
+  position: relative;
+  background-color: #21212172;
+  border: 0;
+  border-radius: 5px;
+  right: 13.3%;
+  top: 7.2px;
+  cursor: pointer;
+}
+
+.api__logo {
+  width: 75%;
+  margin-top: 4.1px;
+  margin-bottom: 0;
+  margin-right: 3px;
+  margin-left: 4px;
+  border-radius: 0px;
+}
+
+.menu__links {
+  margin-top: 25px;
+}
+
+.links__book-text,
+.links__gstar-text,
+.links__opensourse-text {
+  font-family: 'JetBrains Mono';
+  font-size: 18px;
+  color: #fff;
+  transition: 1s;
+  transition-timing-function: ease-in-out;
+}
+
+.links__book-text:hover,
+.links__gstar-text:hover,
+.links__opensourse-text:hover {
+  transition: 1s;
+  transition-timing-function: ease-in-out;
+  color: #888888;
+}
+
+.links__book-logo,
+.links__gstar-logo,
+.links__opensourse-logo {
+  width: 24px;
+  height: 24px;
+  position: relative;
+  top: 5px;
+  cursor: pointer;
+  border-radius: 0;
+}
+
+.links__separation {
+  bottom: 0;
+  height: 4px;
+  margin-top: 4px;
+  border-radius: 5px;
+  background-color: #21212172;
 }
 
 @media (hover: hover) and (pointer: fine) {

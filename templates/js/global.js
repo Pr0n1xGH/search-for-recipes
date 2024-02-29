@@ -1,5 +1,27 @@
+//import translate from "translate";
+
 const inputElement = document.querySelector('.ingredients');
+const selectElement = document.querySelector('.recipes__input')
+const recipesInput = document.querySelector('.recipes__input');
+
+let recipeInput = localStorage.getItem("recipesValue");
+
+if (recipeInput == null || recipeInput == '') {
+    recipeInput = 10
+}
+
+recipesInput.value = recipeInput;
+
 inputElement.addEventListener('input', addCommas);
+selectElement.addEventListener('change', changeValues);
+
+if (localStorage.getItem("apikey") == '') {
+    console.log(localStorage.getItem("apikey")) 
+}
+
+function changeValues(event) {
+    localStorage.setItem("recipesValue", event.target.value);
+}
 
 function addCommas(event) {
     const inputValue = event.target.value;
@@ -28,16 +50,28 @@ function setApiKey() {
 
 async function getReceptions() {
     let apiKeySpoonacular = localStorage.getItem("apikey");
+    let recipesValue = localStorage.getItem("recipesValue")
 
-    if (localStorage.getItem("apikey") == null || localStorage.getItem("apikey") == '') {
+    if (
+        localStorage.getItem("apikey") == null || 
+        localStorage.getItem("apikey") == ''
+    ) {
         apiKeySpoonacular = "47db37349a534b34833999f0ae0edf2f";
+    }
+
+    if (
+        localStorage.getItem("recipesValue") == null || 
+        localStorage.getItem("recipesValue") == ''
+    ) {
+        recipesValue = 10
     }
 
     fetch((
         "https://api.spoonacular.com/recipes/findByIngredients?" +
         new URLSearchParams({
             apiKey: apiKeySpoonacular,
-            ingredients: inputElement.value
+            ingredients: inputElement.value,
+            number: Number(recipesValue)
         }).toString()
     ), {
         method: 'GET',
